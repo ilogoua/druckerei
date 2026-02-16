@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Склад</title>
+    <style>
+        h1 {
+            color: rgb(132, 112, 93);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 14px;
+            background: #2c5aa0;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: #4518da;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Склад предприятия</h1>
+        <p>Учёт расходников: бумага, краска, плёнка.</p>
+    </header>
+
+    <main>
+        <div id="app"></div>
+
+        <h3>Операция</h3>
+
+        <input id="nameInput" type="text" placeholder="Название (точно как в списке)">
+        <input id="amountInput" type="number" placeholder="Количество">
+
+        <button id="issueBtn">Выдать в цех</button>
+        <button id="receiveBtn">Прийняти на склад</button>
+
+
+        <p id="msg"></p>
+
+    </main>
+
+    <footer>
+        <a href="lego.html" class="btn">← Назад</a>
+    </footer>
+    <script src="japen.js"></script>
+
+</body>
+
+</html>
