@@ -2,16 +2,34 @@
 <html>
 
 <head>
+    <meta charset="utf-8" />
     <title> Mein Druckerei</title>
     <style>
-    h1 {
-        color: rgb(109, 81, 136);
-    }
+   .titleRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.titleRow h1 {
+    margin: 0;
+}
+
+.logo {
+    height: 32px;
+}
+
+
   </style>
 </head>
 
 <body>
-    <h1>Полиграфическое предприятие</h1>
+    <div class="titleRow">
+  <h1>Полиграфическое предприятие</h1>
+  <img class="logo" src="ilogoua.png" alt="iLogoUA" />
+</div>
+
+
     <p>Мы печатаем баннеры, визитки и изготавливаем упаковку.</p>
     <div>
         <h2>Наши услуги</h2>
