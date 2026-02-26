@@ -1,0 +1,13 @@
+   .titleRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.titleRow h1 {
+    margin: 0;
+}
+
+.logo {
+    height: 32px;
+}
