@@ -1,0 +1,14 @@
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node (на будущее)
+node_modules/
+dist/
+.next/
+
+# Logs
+*.log
