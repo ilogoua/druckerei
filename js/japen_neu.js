@@ -39,7 +39,10 @@ function прийнятиНаСклад(items, nazva, amount) {
 
 function renderSklad(items) {
   const app = document.getElementById("app");
-  if (!app) return;
+  if (!app) {
+    console.error('Элемент #app не найден!');
+    return;
+  } 
 
   let html = "<h2>Остатки на складе</h2><ul>";
 
@@ -76,7 +79,7 @@ const issueBtn = document.getElementById("issueBtn");
 const receiveBtn = document.getElementById("receiveBtn");
 const msg = document.getElementById("msg");
 const nameInput = document.getElementById("nameInput");
-const amountInput = document.getElementById("amountInput");
+const amountInput = document.getElementById("amountInput"); 
 
 if (amountInput) {
   amountInput.style.display = "none";

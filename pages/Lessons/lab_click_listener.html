@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Lab 1 — Click Listener</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+    button { padding: 10px 16px; font-size: 16px; cursor: pointer; }
+    #log {
+      margin-top: 14px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      background: #f7f7f7;
+      min-height: 120px;
+      white-space: pre-wrap;
+    }
+    .hint { color: #444; font-size: 14px; margin-top: 8px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+
+<body>
+  <h1>Lab 1: addEventListener("click", function(){...})</h1>
+
+  <div class="row">
+    <button id="issueBtn">Выдать в цех</button>
+    <button id="clearBtn">Очистить лог</button>
+  </div>
+
+  <div class="hint">
+    Открой DevTools Console (F12) и сравни с логом ниже.
+  </div>
+
+  <div id="log"></div>
+
+  <script>
+    "use strict";
+
+    // 1) Находим элементы
+    const issueBtn = document.getElementById("issueBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const logBox = document.getElementById("log");
+
+    function log(text) {
+      const line = `[${new Date().toLocaleTimeString()}] ${text}\n`;
+      logBox.textContent += line;
+      console.log(text);
+    }
+
+    // 2) Защита: если кнопка не найдена — ничего не делаем
+    if (issueBtn) {
+      log('Кнопка issueBtn найдена. Навешиваем обработчик клика...');
+
+      // 3) ВАЖНО: мы НЕ вызываем функцию здесь.
+      // Мы ПЕРЕДАЕМ функцию как "инструкцию", которую браузер выполнит ПОТОМ.
+      issueBtn.addEventListener("click", function () {
+        log("👉 Событие click произошло. Запустилась функция-обработчик.");
+      });
+
+    } else {
+      log("❌ issueBtn не найден — обработчик не навесили.");
+    }
+
+    // 4) Для сравнения: обработчик с параметром event
+    if (issueBtn) {
+      issueBtn.addEventListener("click", function (event) {
+        log(`(event) target.id = ${event.target.id}, type = ${event.type}`);
+      });
+    }
+
+    // 5) Кнопка очистки лога
+    if (clearBtn) {
+      clearBtn.addEventListener("click", function () {
+        logBox.textContent = "";
+        console.clear();
+      });
+    }
+
+    // 6) Демонстрация: что будет, если попытаться "выполнить сразу"
+    // НЕ делай так в реальном коде обработчика:
+    // issueBtn.addEventListener("click", log("Я выполнюсь СРАЗУ")); // <- это ошибка мышления
+  </script>
+</body>
+</html>

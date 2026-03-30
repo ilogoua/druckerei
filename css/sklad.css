@@ -1,19 +1,24 @@
-body{
-  margin: 50px;
-  padding: 1px;
-  background: #9aa0a6;      /* фон body — темнее */
-  outline: 3px dashed #00ff00; /* рамка body */
-}
-
-.page{ 
-  max-width: 900px;
-  margin: 100px;
+body {
+  margin: 0px;
   padding: 0px;
-  background: #f6f7f8;      /* фон page — светлее */
-  outline: 3px solid #ff0000; /* рамка page */
+  background: #9aa0a6;
+  /* фон body — темнее */
+  outline: 3px dashed #00ff00;
+  /* рамка body */
 }
 
-html{
+.page {
+  max-width: 900px;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 1px;
+  background: #f6f7f8;
+  /* фон page — светлее */
+  outline: 3px solid #ff0000;
+  /* рамка page */
+}
+
+html {
   background: #0e84e6;
   outline: 3px dotted #ff0000;
 }
